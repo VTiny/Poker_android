@@ -35,7 +35,7 @@ public class MediaMenuFragment extends BaseFragment implements View.OnClickListe
         Intent intent;
         switch (view.getId()) {
             case R.id.btn_take_photo:
-                intent = SingleFragmentHelper.getStartIntent(view.getContext(), TakePhotoFragment.class.getName(), null);
+                intent = SingleFragmentHelper.getStartIntent(view.getContext(), PhotoFragment.class.getName(), null);
                 startActivity(intent);
         }
     }
