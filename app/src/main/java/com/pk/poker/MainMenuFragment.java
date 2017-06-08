@@ -18,28 +18,28 @@ import com.pk.poker.util.SingleFragmentHelper;
 
 public class MainMenuFragment extends BaseFragment implements View.OnClickListener {
 
-    ScrollView scrollView;
+    private ScrollView mScrollView;
 
+    @Nullable
     @Override
-    public View onCreateViewPK(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.pk_menu, container, false);
     }
 
+    @Override
+    public void initField() {
+
+    }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void initView() {
+        mScrollView = (ScrollView) getView().findViewById(R.id.scroll);
+    }
 
-        view.findViewById(R.id.btn_test).setOnClickListener(this);
-        view.findViewById(R.id.btn_media).setOnClickListener(this);
-
-        scrollView = (ScrollView) view.findViewById(R.id.scroll);
-        scrollView.post(new Runnable() {
-            @Override
-            public void run() {
-                scrollView.smoothScrollTo(0, 200);
-            }
-        });
+    @Override
+    public void initEvent() {
+        getView().findViewById(R.id.btn_test).setOnClickListener(this);
+        getView().findViewById(R.id.btn_media).setOnClickListener(this);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class MainMenuFragment extends BaseFragment implements View.OnClickListen
                 startActivity(intent);
                 break;
             case R.id.btn_test:
-                scrollView.smoothScrollTo(0, 100);
+                mScrollView.smoothScrollTo(0, 100);
                 break;
         }
     }

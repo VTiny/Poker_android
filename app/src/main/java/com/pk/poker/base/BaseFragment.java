@@ -3,23 +3,52 @@ package com.pk.poker.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+
+import com.pk.poker.constant.StringConstant;
+import com.pk.poker.util.LogUtil;
 
 /**
  * Created by Poker on 2017/2/16.
  */
 
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
-    @Nullable
+    public final String TAG = getClass().getSimpleName();
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return onCreateViewPK(inflater, container, savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtil.infoLog(TAG, StringConstant.LOG_ON_CREATE);
     }
 
-    public View onCreateViewPK(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return null;
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        LogUtil.infoLog(TAG, StringConstant.LOG_ON_DESTROY);
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initField();
+        initView();
+        initEvent();
+    }
+
+    /**
+     * 初始化变量
+     */
+    public abstract void initField();
+
+    /**
+     * 初始化视图
+     */
+    public abstract void initView();
+
+    /**
+     * 初始化点击事件
+     */
+    public abstract void initEvent();
+
 }

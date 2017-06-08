@@ -39,21 +39,27 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
     private Uri imgUri;
     private ImageView photo;
 
+    @Nullable
     @Override
-    public View onCreateViewPK(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.pk_media_photo, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void initField() {
 
-        view.findViewById(R.id.btn_take_photo).setOnClickListener(this);
-        view.findViewById(R.id.btn_choose_photo).setOnClickListener(this);
+    }
 
-        photo = (ImageView) view.findViewById(R.id.img_photo);
+    @Override
+    public void initView() {
+        photo = (ImageView) getView().findViewById(R.id.img_photo);
+    }
+
+    @Override
+    public void initEvent() {
+        getView().findViewById(R.id.btn_take_photo).setOnClickListener(this);
+        getView().findViewById(R.id.btn_choose_photo).setOnClickListener(this);
         photo.setOnClickListener(this);
-
     }
 
     @Override

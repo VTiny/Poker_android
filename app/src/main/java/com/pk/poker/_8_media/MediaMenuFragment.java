@@ -17,17 +17,25 @@ import com.pk.poker.util.SingleFragmentHelper;
 
 public class MediaMenuFragment extends BaseFragment implements View.OnClickListener{
 
+    @Nullable
     @Override
-    public View onCreateViewPK(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.pk_media_menu, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void initField() {
 
-        view.findViewById(R.id.btn_take_photo).setOnClickListener(this);
+    }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initEvent() {
+        getView().findViewById(R.id.btn_take_photo).setOnClickListener(this);
     }
 
     @Override
