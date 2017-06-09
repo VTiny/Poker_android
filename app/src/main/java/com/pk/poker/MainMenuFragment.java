@@ -27,11 +27,6 @@ public class MainMenuFragment extends BaseFragment implements View.OnClickListen
     }
 
     @Override
-    public void initField() {
-
-    }
-
-    @Override
     public void initView() {
         mScrollView = (ScrollView) getView().findViewById(R.id.scroll);
     }

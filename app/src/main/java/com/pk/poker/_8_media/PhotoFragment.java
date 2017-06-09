@@ -46,11 +46,6 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
     }
 
     @Override
-    public void initField() {
-
-    }
-
-    @Override
     public void initView() {
         photo = (ImageView) getView().findViewById(R.id.img_photo);
     }

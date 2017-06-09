@@ -9,5 +9,18 @@ import com.pk.poker.base.BaseActivity;
  */
 
 public class IPCActivity extends BaseActivity {
+    @Override
+    public void initField() {
 
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initEvent() {
+
+    }
 }

@@ -12,7 +12,7 @@ import com.pk.poker.util.LogUtil;
  * Created by Poker on 2017/2/16.
  */
 
-public abstract class BaseFragment extends Fragment {
+public class BaseFragment extends Fragment {
 
     public final String TAG = getClass().getSimpleName();
 
@@ -39,16 +39,22 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 初始化变量
      */
-    public abstract void initField();
+    public void initField() {
+
+    }
 
     /**
      * 初始化视图
      */
-    public abstract void initView();
+    public void initView() {
+
+    }
 
     /**
      * 初始化点击事件
      */
-    public abstract void initEvent();
+    public void initEvent() {
+
+    }
 
 }

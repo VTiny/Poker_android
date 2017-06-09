@@ -24,16 +24,6 @@ public class MediaMenuFragment extends BaseFragment implements View.OnClickListe
     }
 
     @Override
-    public void initField() {
-
-    }
-
-    @Override
-    public void initView() {
-
-    }
-
-    @Override
     public void initEvent() {
         getView().findViewById(R.id.btn_take_photo).setOnClickListener(this);
     }
