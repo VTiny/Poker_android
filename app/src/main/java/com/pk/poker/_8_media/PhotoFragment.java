@@ -21,7 +21,7 @@ import android.widget.ImageView;
 
 import com.pk.poker.R;
 import com.pk.poker.base.BaseFragment;
-import com.pk.poker.util.PKToast;
+import com.pk.poker.util.ToastUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +42,7 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.pk_media_photo, container, false);
+        return inflater.inflate(R.layout.lx_media_photo, container, false);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
                     }
                     outImg.createNewFile();
                 } catch (IOException ioe) {
-                    PKToast.makeTip(v.getContext(), "file error");
+                    ToastUtil.show(getContext(), "file error");
                 }
                 if (Build.VERSION.SDK_INT >= 24) {
                     imgUri = FileProvider.getUriForFile(v.getContext(), "com.pk.poker.fileprovider", outImg);
@@ -86,8 +86,8 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
 //                } else {
 //                    intent = new Intent("android.intent.action.GET_CONTENT");
 //                    intent.setType("image/*");
-                    intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(intent, CHOOSE_PHOTO);
+                intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, CHOOSE_PHOTO);
 //                    break;
 //                }
                 break;
@@ -166,8 +166,8 @@ public class PhotoFragment extends BaseFragment implements View.OnClickListener 
         if (imgPath != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(imgPath);
             photo.setImageBitmap(bitmap);
-        }else {
-            PKToast.makeTip(getContext(), "failed to get image");
+        } else {
+            ToastUtil.show(getContext(), "failed to get image");
         }
     }
 

@@ -20,7 +20,7 @@ public class MediaMenuFragment extends BaseFragment implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.pk_media_menu, container, false);
+        return inflater.inflate(R.layout.lx_media_menu, container, false);
     }
 
     @Override
