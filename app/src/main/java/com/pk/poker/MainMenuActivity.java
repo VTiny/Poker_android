@@ -9,7 +9,7 @@ public class MainMenuActivity extends SingleFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SingleFragmentHelper.putSingleBundle(getIntent(), MainMenuFragment2.class.getName(), null);
+        SingleFragmentHelper.putSingleBundle(getIntent(), MainMenuFragment.class.getName(), null);
         super.onCreate(savedInstanceState);
     }
 

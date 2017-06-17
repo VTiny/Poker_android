@@ -2,6 +2,7 @@ package com.pk.poker._1_ui;
 
 import android.util.Pair;
 
+import com.pk.poker.base.SimpleListViewFragment;
 import com.pk.poker.storage.MyApplication;
 
 import java.util.List;
@@ -15,6 +16,6 @@ import java.util.List;
 public class UIMenuFragment extends SimpleListViewFragment {
     @Override
     public List<Pair<String, Class>> getPairData() {
-        return MyApplication.mUIMenuPairList;
+        return MyApplication.mMenuStorage.mUIMenu;
     }
 }

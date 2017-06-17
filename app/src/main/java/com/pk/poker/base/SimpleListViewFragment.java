@@ -1,4 +1,4 @@
-package com.pk.poker._1_ui;
+package com.pk.poker.base;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.pk.poker.R;
-import com.pk.poker.base.BaseFragment;
-import com.pk.poker.base.SimpleViewHolderAdapter;
 import com.pk.poker.util.SingleFragmentHelper;
 
 import java.util.ArrayList;
