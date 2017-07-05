@@ -16,6 +16,6 @@ import java.util.List;
 public class UIMenuFragment extends SimpleListViewFragment {
     @Override
     public List<Pair<String, Class>> getPairData() {
-        return MyApplication.mMenuStorage.mUIMenu;
+        return MyApplication.getInstance().getMenuStorage().mUIMenu;
     }
 }
